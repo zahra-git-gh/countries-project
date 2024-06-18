@@ -1,13 +1,18 @@
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export function Header() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(localStorage.getItem('mode')!=='undefined'?(localStorage.getItem('mode')==='true') : false);
+  localStorage.setItem('mode', isDark)
   function darkModeClickHandler() {
     setIsDark((d) => !d);
+  localStorage.setItem('mode', isDark)
+
   }
-  if (isDark) {
+  if (localStorage.getItem('mode')!=='false') {
+    console.log('im in dark mode but dont want work well');
     document.body.classList.add("dark");
     document.body.style.backgroundColor = "rgb(32,44,55)";
   } else {
@@ -15,9 +20,11 @@ export function Header() {
     document.body.style.backgroundColor = "rgb(250,250,250)";
   }
   return (
-    <header className="w-100 h-20 shadow-lg bg-white px-5 dark:bg-[#2B3945] sm:px-7" >
+    <header className="w-100 h-20 shadow-lg bg-white px-5 dark:bg-[#2B3945] sm:px-7">
       <section className="w-100 h-full flex items-center justify-between">
-        <p className="font-extrabold dark:text-white md:text-lg">Where in the world?</p>
+        <Link to={'/'} className="font-extrabold dark:text-white md:text-lg">
+          Where in the world?
+        </Link >
         <div
           onClick={darkModeClickHandler}
           className="flex items-center gap-1 cursor-pointer"

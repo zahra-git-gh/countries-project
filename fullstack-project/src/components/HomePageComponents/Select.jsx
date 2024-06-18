@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addRegion } from "../../redux/countriesSlice";
 
 export function SelectEle() {
   const [isClicked, setIsClicked] = useState(false);
   const [btnValue, setBtnValue] = useState("Filter by Region");
-  const region = ["All", "Asia", "America", "Africa", "Europe", "Oceania"];
+  const region = ["All", "Asia", "Americas", "Africa", "Europe", "Oceania"];
+  const dispatch=useDispatch()
   return (
     <div>
       <button
@@ -40,6 +43,7 @@ export function SelectEle() {
                 onClick={() => {
                   setBtnValue(r);
                   setIsClicked(false);
+                  dispatch(addRegion(r))
                 }}
                 key={i}
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-[#2c3a45] dark:hover:text-white"
