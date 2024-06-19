@@ -1,7 +1,11 @@
+import { NotFoundPage } from "../../pages/NotFoundPage";
 import { ButtonCountry } from "./ButtonCountry";
 
 export function DetailsCard({ data }) {
   console.log(data);
+  if(!data){
+    return <NotFoundPage/>
+  }
   let nativename = "";
   let currencies = "";
   let languages = Object.values(data.languages).join(" ,");

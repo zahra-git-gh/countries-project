@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { NotFoundPage } from "../../pages/NotFoundPage";
 
 export function ButtonCountry({ code }) {
   console.log(code);
@@ -12,7 +13,10 @@ export function ButtonCountry({ code }) {
       .then((data1) => {
         setData(data1);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err)
+        return <NotFoundPage/>
+        });
   }, [code]);
 
   return (
