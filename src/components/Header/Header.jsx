@@ -22,7 +22,7 @@ export function Header() {
   return (
     <header className="w-100 h-20 shadow-lg bg-white px-5 dark:bg-[#2B3945] sm:px-7">
       <section className="w-100 h-full flex items-center justify-between">
-        <Link to={'/'} className="font-extrabold dark:text-white md:text-lg">
+        <Link to={'/first-full-stack-project/'} className="font-extrabold dark:text-white md:text-lg">
           Where in the world?
         </Link >
         <div
