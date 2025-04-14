@@ -12,7 +12,6 @@ export function SearchInput() {
       dispatch(addSearch(search));
     }, 2000);
     return () =>{
-      console.log('anything');
       return clearTimeout(delay)};
   }, [search, dispatch]);
   return (

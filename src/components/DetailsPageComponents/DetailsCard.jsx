@@ -2,14 +2,12 @@ import { NotFoundPage } from "../../pages/NotFoundPage";
 import { ButtonCountry } from "./ButtonCountry";
 
 export function DetailsCard({ data }) {
-  console.log(data);
   if(!data){
     return <NotFoundPage/>
   }
   let nativename = "";
   let currencies = "";
   let languages = Object.values(data.languages).join(" ,");
-  console.log(data.name.nativeName);
   for (const name in data.name.nativeName) {
     nativename = data.name.nativeName[name].common;
   }

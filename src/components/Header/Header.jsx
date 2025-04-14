@@ -12,7 +12,6 @@ export function Header() {
 
   }
   if (localStorage.getItem('mode')!=='false') {
-    console.log('im in dark mode but dont want work well');
     document.body.classList.add("dark");
     document.body.style.backgroundColor = "rgb(32,44,55)";
   } else {

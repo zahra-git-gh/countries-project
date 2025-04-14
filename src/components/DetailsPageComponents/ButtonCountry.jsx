@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { NotFoundPage } from "../../pages/NotFoundPage";
 
 export function ButtonCountry({ code }) {
-  console.log(code);
   const [data, setData] = useState(null);
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/alpha/${code}`)

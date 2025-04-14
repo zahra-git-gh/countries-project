@@ -25,7 +25,6 @@ const countriesSlice=createSlice({
         
     },
     extraReducers: (builder)=>{
-        console.log('this is builder:',builder);
         builder.addCase(fetchCountries.fulfilled, (state, action)=>{
             state.data=action.payload
         })
