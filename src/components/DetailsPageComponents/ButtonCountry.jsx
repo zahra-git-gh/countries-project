@@ -19,7 +19,7 @@ export function ButtonCountry({ code }) {
   }, [code]);
 
   return (
-    <Link to={`/first-full-stack-project/${code}`} state={data && data[0]}>
+    <Link to={`/${code}`} state={data && data[0]}>
       <button className=" py-1 px-8 rounded-sm bg-white shadow-lg  hover:bg-gray-200 dark:bg-[rgb(43,57,69)] dark:text-white dark:hover:bg-[#1f282f]">
         {data && data[0]?.name?.common}
       </button>

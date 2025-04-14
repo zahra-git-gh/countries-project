@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Card({ data }) {
   return (
-    <Link to={`/first-full-stack-project/${data.cca3}`} state={data} className="h-auto w-full max-w-[265px] ">
+    <Link to={`/${data.cca3}`} state={data} className="h-auto w-full max-w-[265px] ">
     <section className="max-w-[265px] h-auto w-full mt-10 rounded-md shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
       <div
         style={{ backgroundImage: `url(${data.flags.png})` }}

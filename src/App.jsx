@@ -11,8 +11,8 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/first-full-stack-project/" element={<HomePage />} />
-          <Route path="/first-full-stack-project/:id" element={<DetailsPage/>}></Route>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/:id" element={<DetailsPage/>}></Route>
           <Route path="*" element={<NotFoundPage/>} />
         </Routes>
       </BrowserRouter>
